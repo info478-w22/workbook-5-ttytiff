@@ -30,6 +30,6 @@ nhanes_survey <- svydesign(
   data = nhanes
 )
 
-nhanes_mean <- svymean(nhanes_survey, mean)
+nhances_mean <- svymean(~alq151, nhanes_survey, na.rm = T)
 
-mean_by_gender <- svyby(~, ~riagender, dclus1, svymean)
+mean_by_gender <- svyby(~alq151, ~riagendr, nhanes_survey, svymean)
